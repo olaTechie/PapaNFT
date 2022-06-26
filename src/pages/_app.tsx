@@ -33,7 +33,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
                 />
                 <Toaster />
                 <NextNProgress
-                    color="#23D1B5"
+                    color="#053557"
                     options={{ showSpinner: false }}
                 />
                 <Component {...pageProps} />

@@ -27,7 +27,6 @@ const Signup: NextPage = () => {
     const walletConnect = useWalletConnect();
     const [loading, setLoading] = useState(false);
     const breakpoint = useBreakpoint();
-    console.log(breakpoint);
 
     const buttonStyles = {
         backdropFilter: 'blur(16px) saturate(180%)',
