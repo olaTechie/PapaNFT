@@ -17,7 +17,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             <ChakraProvider theme={theme}>
                 <NextSeo
                     title="PapaNFT"
-                    canonical="https://papanft.vercel.app/"
+                    canonical="https://PapaNFT.vercel.app/"
                     openGraph={{
                         images: [
                             {
@@ -28,12 +28,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
                             },
                         ],
                         site_name: 'PapaNFT',
-                        url: 'https://papanft.vercel.app/',
+                        url: 'https://PapaNFT.vercel.app/',
                     }}
                 />
                 <Toaster />
                 <NextNProgress
-                    color="#053557"
+                    color="#2F8FFE"
                     options={{ showSpinner: false }}
                 />
                 <Component {...pageProps} />
