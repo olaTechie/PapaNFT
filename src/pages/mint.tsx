@@ -1,9 +1,52 @@
 import Layout from '@/Layouts/Main.layout';
-import { Button, Text } from '@chakra-ui/react';
+import { Button, Spinner, Text } from '@chakra-ui/react';
+import { useAddress, useEdition, useMetamask } from '@thirdweb-dev/react';
+import axios from 'axios';
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const Mint: NextPage = () => {
+    const address = useAddress();
+    const connectMetamask = useMetamask();
+    const [loading, setLoading] = useState(false);
+    const edition = useEdition(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS);
+
+    const handleClick = async () => {
+        setLoading(true);
+        try {
+            const signedPayload = await axios.post('/api/mint-nft', {
+                address,
+            });
+
+            if (signedPayload.data.signedPayload) {
+                try {
+                    const nft = await edition?.signature.mint(
+                        signedPayload.data.signedPayload,
+                    );
+                    if (nft) {
+                        await axios.post('/api/set-minted', {
+                            address,
+                        });
+                    }
+                    toast.success(
+                        'Access Pass minted successfully! Head over to /surprise 👀',
+                    );
+                    return nft;
+                } catch (err) {
+                    toast.error(err.response.data.error);
+                    return null;
+                } finally {
+                    setLoading(false);
+                }
+            }
+        } catch (e) {
+            toast.error(e.response.data.error);
+            setLoading(false);
+        }
+    };
+
     return (
         <Layout>
             <Image
@@ -20,7 +63,26 @@ const Mint: NextPage = () => {
                 This access pass is a erc 1155 token that you can use to access
                 a surprise page.
             </Text>
-            <Button mt="4">Mint</Button>
+            {address ? (
+                <Button
+                    disabled={loading}
+                    mt="4"
+                    cursor={loading ? 'not-allowed' : 'pointer'}
+                    onClick={handleClick}
+                >
+                    {loading ? <Spinner /> : 'Mint Access Pass'}
+                </Button>
+            ) : (
+                <Button mt="4" onClick={() => connectMetamask()}>
+                    <Image
+                        src="/assets/metamask.svg"
+                        alt="Metamask"
+                        width={30}
+                        height={30}
+                    />
+                    <Text fontSize="lg">Connect Metamask</Text>
+                </Button>
+            )}
         </Layout>
     );
 };

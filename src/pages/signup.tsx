@@ -1,15 +1,17 @@
 import Layout from '@/Layouts/Main.layout';
-import { Button, Flex, Tag, Text } from '@chakra-ui/react';
+import { Button, Flex, Spinner, Tag, Text } from '@chakra-ui/react';
 import { useAddress, useMetamask } from '@thirdweb-dev/react';
 import axios from 'axios';
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { BiCopy } from 'react-icons/bi';
 
 const Signup: NextPage = () => {
     const address = useAddress();
     const connectMetamask = useMetamask();
+    const [loading, setLoading] = useState(false);
 
     const buttonStyles = {
         backdropFilter: 'blur(16px) saturate(180%)',
@@ -26,11 +28,13 @@ const Signup: NextPage = () => {
             return;
         }
         try {
+            setLoading(true);
             await axios.post('/api/add-to-allowlist', { address });
             toast.success('Added to allowlist');
+            setLoading(false);
         } catch (e) {
-            console.error(e);
             toast.error(e.response.data.error);
+            setLoading(false);
         }
     };
 
@@ -69,7 +73,7 @@ const Signup: NextPage = () => {
                         </Tag>
                     </Flex>
                     <Button onClick={addToAllowlist}>
-                        Signup to allowlist
+                        {loading ? <Spinner /> : 'Signup to allowlist'}
                     </Button>
                 </Flex>
             ) : (
