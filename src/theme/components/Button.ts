@@ -18,13 +18,13 @@ const Button: ComponentStyleConfig = {
     variants: {
         primary: {
             _active: {
-                bg: '#053557',
+                bg: 'messenger.500',
             },
             _focus: {},
             _hover: {
-                bg: '#197EC3',
+                bg: 'messenger.300',
             },
-            bg: '#053557',
+            bg: 'messenger.400',
             color: 'white',
             fontSize: 'lg',
             fontWeight: '500',

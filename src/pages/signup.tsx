@@ -33,7 +33,7 @@ const Signup: NextPage = () => {
         rounded: 'lg',
         h: '12',
         w: '72',
-        gap: '4',
+        gap: '2',
         borderRadius: '10px',
     };
 

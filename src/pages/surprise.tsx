@@ -14,6 +14,15 @@ const Surprise = () => {
     const [hasNFT, setHasNFT] = useState(false);
     const [claimLoading, setClaimLoading] = useState(false);
 
+    const buttonStyles = {
+        backdropFilter: 'blur(16px) saturate(180%)',
+        rounded: 'lg',
+        h: '12',
+        w: '72',
+        gap: '2',
+        borderRadius: '10px',
+    };
+
     useEffect(() => {
         const doesOwn = async () => {
             setLoading(true);
@@ -31,7 +40,7 @@ const Surprise = () => {
     if (!address) {
         return (
             <Layout>
-                <Button onClick={() => connectMetamask()}>
+                <Button {...buttonStyles} onClick={() => connectMetamask()}>
                     Connect Metamask
                 </Button>
             </Layout>
