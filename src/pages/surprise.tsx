@@ -85,12 +85,20 @@ const Surprise = () => {
 
     return (
         <Layout>
-            <Flex flexDir="column" gap="10">
-                <Text color="white" fontSize="4xl" fontWeight="semibold">
+            <Flex flexDir="column" gap="10" px={['20', '0']}>
+                <Text
+                    color="white"
+                    fontSize={['2xl', '4xl']}
+                    fontWeight="semibold"
+                >
                     Thank you for purchasing the access pass!
                 </Text>
                 <Image src="https://i.gifer.com/fxt5.gif" alt="surprise" />
-                <Text fontSize="2xl" fontWeight="semibold" color="white">
+                <Text
+                    fontSize={['lg', '2xl']}
+                    fontWeight="semibold"
+                    color="white"
+                >
                     Here is a gift for you, you can mint 100 $MUTANT tokens
                 </Text>
                 <Button onClick={() => mintTokens()}>

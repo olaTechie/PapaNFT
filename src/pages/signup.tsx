@@ -1,6 +1,18 @@
 import Layout from '@/Layouts/Main.layout';
-import { Button, Flex, Spinner, Tag, Text } from '@chakra-ui/react';
-import { useAddress, useMetamask } from '@thirdweb-dev/react';
+import {
+    Button,
+    Flex,
+    Spinner,
+    Tag,
+    Text,
+    useBreakpoint,
+} from '@chakra-ui/react';
+import {
+    useAddress,
+    useCoinbaseWallet,
+    useMetamask,
+    useWalletConnect,
+} from '@thirdweb-dev/react';
 import axios from 'axios';
 import type { NextPage } from 'next';
 import Image from 'next/image';
@@ -11,7 +23,11 @@ import { BiCopy } from 'react-icons/bi';
 const Signup: NextPage = () => {
     const address = useAddress();
     const connectMetamask = useMetamask();
+    const connectCoinbase = useCoinbaseWallet();
+    const walletConnect = useWalletConnect();
     const [loading, setLoading] = useState(false);
+    const breakpoint = useBreakpoint();
+    console.log(breakpoint);
 
     const buttonStyles = {
         backdropFilter: 'blur(16px) saturate(180%)',
@@ -36,6 +52,10 @@ const Signup: NextPage = () => {
             toast.error(e.response.data.error);
             setLoading(false);
         }
+    };
+
+    const truncateAddress = (address: string) => {
+        return `${address.slice(0, 10)}...${address.slice(-10)}`;
     };
 
     return (
@@ -68,7 +88,11 @@ const Signup: NextPage = () => {
                                 toast.success('Copied to clipboard');
                             }}
                         >
-                            <Text fontSize="md">{address}</Text>
+                            <Text fontSize="md">
+                                {breakpoint === 'base'
+                                    ? truncateAddress(address)
+                                    : address}
+                            </Text>
                             <BiCopy size="1rem" />
                         </Tag>
                     </Flex>
@@ -88,7 +112,7 @@ const Signup: NextPage = () => {
                         <Text fontSize="lg">Metamask</Text>
                     </Button>
 
-                    <Button {...buttonStyles}>
+                    <Button {...buttonStyles} onClick={() => connectCoinbase()}>
                         <Image
                             src="/assets/coinbase.svg"
                             alt="Coinbase"
@@ -98,7 +122,7 @@ const Signup: NextPage = () => {
                         <Text fontSize="lg">Coinbase</Text>
                     </Button>
 
-                    <Button {...buttonStyles}>
+                    <Button {...buttonStyles} onClick={walletConnect}>
                         <Image
                             src="/assets/walletconnect.svg"
                             alt="Wallet Connect"
