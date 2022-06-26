@@ -12,7 +12,7 @@ const addToAllowlist = async (req: NextApiRequest, res: NextApiResponse) => {
         .all();
 
     if (record.length > 0) {
-        res.status(400).json({
+        return res.status(400).json({
             error: 'User is already in allowlist',
         });
     }
@@ -26,11 +26,11 @@ const addToAllowlist = async (req: NextApiRequest, res: NextApiResponse) => {
                     },
                 },
             ]);
-            res.status(200).json({
+            return res.status(200).json({
                 message: 'User added to allowlist',
             });
         } catch (err) {
-            res.status(500).json({
+            return res.status(500).json({
                 error: err,
             });
         }

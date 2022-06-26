@@ -17,35 +17,38 @@ const generateMintSignature = async (
         .all();
 
     if (record.length === 0) {
-        res.status(400).json({
+        return res.status(400).json({
             error: "User isn't in allowlist",
         });
-    } else {
-        const sdk = new ThirdwebSDK(
-            new ethers.Wallet(
-                process.env.PRIVATE_KEY as string,
-                ethers.getDefaultProvider(process.env.ALCHEMY_API_URL),
-            ),
-        );
+    }
 
-        const edition = sdk.getEdition(
-            process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
-        );
-        try {
-            const signedPayload = await edition.signature.generateFromTokenId({
-                tokenId: 0,
-                quantity: '1',
-                to: address,
-            });
+    if (record[0].fields.minted === 'true') {
+        return res.status(400).json({
+            error: 'User has already minted the access pass',
+        });
+    }
+    const sdk = new ThirdwebSDK(
+        new ethers.Wallet(
+            process.env.PRIVATE_KEY as string,
+            ethers.getDefaultProvider(process.env.ALCHEMY_API_URL),
+        ),
+    );
 
-            res.status(200).json({
-                signedPayload,
-            });
-        } catch (err) {
-            res.status(500).json({
-                error: err,
-            });
-        }
+    const edition = sdk.getEdition(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS);
+    try {
+        const signedPayload = await edition.signature.generateFromTokenId({
+            tokenId: 0,
+            quantity: '1',
+            to: address,
+        });
+
+        return res.status(200).json({
+            signedPayload,
+        });
+    } catch (err) {
+        return res.status(500).json({
+            error: err,
+        });
     }
 };
 
