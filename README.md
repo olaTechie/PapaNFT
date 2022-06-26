@@ -21,6 +21,8 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#app-screenshots">License</a></li>
+    <li><a href="#folder-structure">Contact</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -33,7 +35,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+
   </ol>
 </details>
 
@@ -55,35 +57,40 @@ Team Name: Team Mutants
 
 - [Next.js](https://nextjs.org/)
 - [React.js](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Angular](https://angular.io/)
-- [Svelte](https://svelte.dev/)
-- [Laravel](https://laravel.com)
-- [Bootstrap](https://getbootstrap.com)
-- [JQuery](https://jquery.com)
+- [Chakra UI](https://chakra-ui.com/)
+- [Thirdweb](https://thirdweb.com/)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- App Screenshots -->
 ## App Screenshots
 
 |                                    Home                                     |                                  Signup                                  |                                                                                      Mint Access Page                                                                                      |                                                                                          Surprise                                                                                          |
 | :-------------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | <img src="public/assets/home.png" title="Home " width="100%"> | <img src="public/assets/signup.png" title="Signup" width="100%"> | <img src="public/assets/mint.png" title="Mint Access Page" width="100%"> | <img src="public/assets/surprise.png" title="Surprise" width="100%"> |
 
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Folder Structure -->
+
 ## Folder Structure
 
     .
-    ├── .github/ISSUE_TEMPLATE
-    ├── doc                          # All Api doc and gif files
-    ├── thisMyPCApp                  # Electron JS app folder
-    ├── thisMyPCServer               # Node JS MongoDB and Express JS server folder
-    ├── thisMyPCWeb                  # Angular website folder
+    ├── public/assets
+    ├── src/                          
+           |Layouts                 
+           |components              
+           |pages  
+           |themes 
+           |utils    
     ├── .gitignore
-    ├── .gitlab-ci.yml
-    ├── CODE_OF_CONDUCT.md
-    ├── LICENSE
     └── README.md
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -91,7 +98,7 @@ Team Name: Team Mutants
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+
 
 - yarn
   ```sh
@@ -100,11 +107,10 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/avneesh0612/PapaNFT.git
    ```
 2. Install packages
    ```sh
@@ -146,28 +152,17 @@ Distributed under the MIT License.
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+PAPAFAM Team Mutants
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-- [Choose an Open Source License](https://choosealicense.com)
-- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-- [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-- [Malven's Grid Cheatsheet](https://grid.malven.co/)
-- [Img Shields](https://shields.io)
-- [GitHub Pages](https://pages.github.com)
-- [Font Awesome](https://fontawesome.com)
-- [React Icons](https://react-icons.github.io/react-icons/search)
+* Avneesh Agarwal
+* Ola Uthman
+* Mohammed Aashik
+* Arjun Joshi
+* Karaz-debug 
+* Ravi Rajyaguru
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
