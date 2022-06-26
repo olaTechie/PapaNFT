@@ -11,7 +11,7 @@ const Mint: NextPage = () => {
     const address = useAddress();
     const connectMetamask = useMetamask();
     const [loading, setLoading] = useState(false);
-    const edition = useEdition(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS);
+    const edition = useEdition(process.env.NEXT_PUBLIC_EDITION_ADDRESS);
 
     const handleClick = async () => {
         setLoading(true);

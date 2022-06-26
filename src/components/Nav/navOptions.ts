@@ -12,8 +12,12 @@ const navOptions = [
         label: 'Mint Access Pass',
     },
     {
+        href: '/surprise',
+        label: 'Surprise',
+    },
+    {
         isExternal: true,
-        href: 'https://github.com/buidler-hub/solkudos',
+        href: 'https://github.com/avneesh0612/papa-fam-hackathon',
         label: 'GitHub',
     },
 ];

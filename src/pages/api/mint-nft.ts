@@ -1,6 +1,5 @@
+import sdk from '@/utils/thirdweb';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ThirdwebSDK } from '@thirdweb-dev/sdk';
-import { ethers } from 'ethers';
 import { table } from '../../utils/Airtable';
 
 const generateMintSignature = async (
@@ -27,14 +26,8 @@ const generateMintSignature = async (
             error: 'User has already minted the access pass',
         });
     }
-    const sdk = new ThirdwebSDK(
-        new ethers.Wallet(
-            process.env.PRIVATE_KEY as string,
-            ethers.getDefaultProvider(process.env.ALCHEMY_API_URL),
-        ),
-    );
 
-    const edition = sdk.getEdition(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS);
+    const edition = sdk.getEdition(process.env.NEXT_PUBLIC_EDITION_ADDRESS);
     try {
         const signedPayload = await edition.signature.generateFromTokenId({
             tokenId: 0,
