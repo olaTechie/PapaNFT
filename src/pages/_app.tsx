@@ -6,6 +6,10 @@ import { NextSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
 import { Toaster } from 'react-hot-toast';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/900.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
     return (

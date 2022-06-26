@@ -1,5 +1,5 @@
 import Layout from '@/Layouts/Main.layout';
-import { Button, Spinner, Text } from '@chakra-ui/react';
+import { Button, Link, Spinner, Text } from '@chakra-ui/react';
 import { useAddress, useEdition, useMetamask } from '@thirdweb-dev/react';
 import axios from 'axios';
 import type { NextPage } from 'next';
@@ -49,14 +49,19 @@ const Mint: NextPage = () => {
 
     return (
         <Layout>
-            <Image
-                src="/assets/access-pass.svg"
-                alt="Access Pass"
-                width={600}
-                height={300}
-                objectFit="contain"
-            />
-            <Text as="h2" fontSize="4xl" color="white">
+            <Link
+                isExternal
+                href={`https://testnets.opensea.io/assets/mumbai/${process.env.NEXT_PUBLIC_EDITION_ADDRESS}/0`}
+            >
+                <Image
+                    src="/assets/access-pass.svg"
+                    alt="Access Pass"
+                    width={600}
+                    height={300}
+                    objectFit="contain"
+                />
+            </Link>
+            <Text as="h2" fontSize="4xl" color="white" fontWeight="bold">
                 Access Pass
             </Text>
             <Text as="h3" fontSize="xl" color="white">

@@ -64,7 +64,7 @@ const Signup: NextPage = () => {
                 as="h1"
                 fontSize="4xl"
                 color="white"
-                fontWeight="bold"
+                fontWeight="900"
                 textAlign="center"
                 zIndex="5"
             >
@@ -74,7 +74,12 @@ const Signup: NextPage = () => {
             {address ? (
                 <Flex flexDir="column" gap="5" mt="10" zIndex="5">
                     <Flex flexDir="column">
-                        <Text align="left" color="white">
+                        <Text
+                            align="left"
+                            color="white"
+                            fontSize="lg"
+                            fontWeight="medium"
+                        >
                             Address
                         </Text>
                         <Tag
