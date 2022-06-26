@@ -3,8 +3,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/avneesh0612/PapaNFT">
+    <img src="public/assets/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">PAPANFT</h3>
@@ -41,7 +41,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product]](https://papanft.vercel.app/)
 
 Team Name: Team Mutants
 
@@ -68,7 +68,7 @@ Team Name: Team Mutants
 
 |                                    Home                                     |                                  Signup                                  |                                                                                      Mint Access Page                                                                                      |                                                                                          Surprise                                                                                          |
 | :-------------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <img src="public/assets/logo.svg" title="Desktop App  Login " width="100%"> | <img src="public/assets/logo.svg" title="Desktop App Open" width="100%"> | <img src="https://raw.githubusercontent.com/supunlakmal/thismypc/master/thisMyPCWeb/angular-deprecated/src/assets/images/screen/web-system.PNG" title="Web App  PC  Drivers" width="100%"> | <img src="https://raw.githubusercontent.com/supunlakmal/thismypc/master/thisMyPCWeb/angular-deprecated/src/assets/images/screen/web-system.PNG" title="Web App  PC  Drivers" width="100%"> |
+| <img src="public/assets/home.png" title="Home " width="100%"> | <img src="public/assets/signup.png" title="Signup" width="100%"> | <img src="public/assets/mint.png" title="Mint Access Page" width="100%"> | <img src="public/assets/surprise.png" title="Surprise" width="100%"> |
 
 ## Folder Structure
 
@@ -84,7 +84,6 @@ Team Name: Team Mutants
     ├── LICENSE
     └── README.md
 
-https://github.com/avneesh0612/PapaNFT/blob/d98ad2b92649c8e7d9d3cc4bdd25fd16e01234bb/public/assets/home.png
 
 <!-- GETTING STARTED -->
 
