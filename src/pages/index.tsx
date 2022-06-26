@@ -7,7 +7,6 @@ const Home: FC = () => {
     return (
         <Layout>
             <Stack
-                minH="100vh"
                 direction={{ base: 'column', md: 'row' }}
                 justify={{ base: 'center', md: 'space-between' }}
                 align="center"

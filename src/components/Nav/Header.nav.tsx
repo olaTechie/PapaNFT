@@ -17,6 +17,7 @@ const Header: NextComponentType = () => {
             textColor="white"
             top="0"
             w="full"
+            zIndex="4"
         >
             <Flex
                 alignItems="center"
